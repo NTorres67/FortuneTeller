@@ -10,48 +10,53 @@ namespace FortuneTeller
     {
         static void Main(string[] args)
         {
-
             //User's First Name
             string nameFirst = "";
             Console.WriteLine("Please enter your first name.");
             nameFirst = Console.ReadLine();
             Console.WriteLine(" ");
             //Console.WriteLine(nameFirst);
-
-
+            
             //User's Last Name
             string nameLast = "";
             Console.WriteLine("Please enter your last name.");
             nameLast = Console.ReadLine();
             Console.WriteLine(" ");
             //Console.WriteLine(nameLast);
-
-
+            
             //User's Age
             Console.WriteLine("Please enter your age.");
             int ageCurrent = int.Parse(Console.ReadLine());
             Console.WriteLine(" ");
             //Console.WriteLine(ageCurrent);
-
-
+            
             //Years to Retirement
             int ageOdd = 62;
             int ageEven = 65;
-            int retire = (ageEven - ageCurrent);
+            //int retire = (ageEven - ageCurrent);
+
+            int retire;
+            if ((ageCurrent % 2) == 0)
+            {
+                retire = (ageEven - ageCurrent);
+                //Console.WriteLine(retire);
+            }
+            else
+            {
+                retire = (ageOdd - ageCurrent);
+            }
+
             //Console.WriteLine(retire);
             Console.WriteLine("");
-
-
+            
             //Birth Month
             Console.WriteLine("Please enter your month of birth by its numerical value.");
             int birthMonth = int.Parse(Console.ReadLine());
             //Console.WriteLine(birthMonth);
             Console.WriteLine(" ");
-
-
+            
             //Money in bank based on month of birth
             string pay = "";
-
             if ((birthMonth == 1) || (birthMonth == 2) || (birthMonth == 3) || (birthMonth == 4))
             {
                 pay = "$10,000";
@@ -75,9 +80,7 @@ namespace FortuneTeller
             else
             { }
             Console.WriteLine("");
-
-
-
+            
             //Favorite Color
             Console.WriteLine("Please state your favorite using the ROYGBIV color acronym.");
             Console.WriteLine("If help is required, please type the word \"Help.\"");
@@ -104,16 +107,15 @@ namespace FortuneTeller
             }
 
             Console.WriteLine("");
-
-
+            
             //Transportation according to favorite color
             string col = "";
-            string orange = "";
-            string yellow = "";
-            string green = "";
-            string blue = "";
-            string indigo = "";
-            string violet = "";
+            //string orange = "";
+            //string yellow = "";
+            //string green = "";
+            //string blue = "";
+            //string indigo = "";
+            //string violet = "";
 
             switch (color)
             {
@@ -151,23 +153,19 @@ namespace FortuneTeller
             }
 
             Console.WriteLine("");
-
-
-
-
+            
             //Number Siblings
             Console.WriteLine("How many sibilings do you have?");
             int numberSiblings = int.Parse(Console.ReadLine());
             //Console.Write(numberSiblings);
             Console.WriteLine("");
-
-
+            
             //Vacation Home according to number of siblings
             string vac = "";
-            string zero = "";
-            string one = "";
-            string two = "";
-            string three = "";
+            //string zero = "";
+            //string one = "";
+            //string two = "";
+            //string three = "";
 
             if (numberSiblings <= 0)
             {
@@ -198,11 +196,9 @@ namespace FortuneTeller
             { }
 
             Console.WriteLine("");
-
-
-
-            Console.WriteLine("{0} {1} will retire in {2} years with {3} in the bank, ", nameFirst, nameLast, retire, pay);
-            Console.WriteLine("and a vacation home in {0} and a {1}", vac, col);
+            
+            Console.WriteLine("{0} {1} will retire in {2} years with {3} in the bank and a vaction home in a {4} and a {5}", nameFirst, nameLast, retire, pay, vac, col);
+            //Console.WriteLine("and a vacation home in {0} and a {1}", vac, col);
 
             Console.WriteLine("");
         }
