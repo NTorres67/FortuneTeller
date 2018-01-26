@@ -89,7 +89,7 @@ namespace FortuneTeller
             string color = favoriteColor.ToLower();
             Console.WriteLine(" ");
 
-            if (favoriteColor == "Help")
+            if (favoriteColor == "help")
             {
                 Console.WriteLine("R = red");
                 Console.WriteLine("O = orange");
